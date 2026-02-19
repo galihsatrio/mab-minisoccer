@@ -2,10 +2,13 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BookingModal from "@/components/BookingModal";
 import { useState } from "react";
 
 export default function SchedulePage() {
    const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
 
    // Dummy booking data
    const timeSlots = [
@@ -31,14 +34,20 @@ export default function SchedulePage() {
       { time: "01:00", status: "available" },
    ];
 
+   const handleSlotClick = (time: string, isBooked: boolean) => {
+      if (isBooked) return;
+      setSelectedSlot(time);
+      setIsModalOpen(true);
+   };
+
    return (
-      <div className="flex min-h-screen flex-col bg-black">
+      <div className="flex min-h-screen flex-col bg-black font-sans">
          <Navbar />
 
          <main className="flex-grow pt-32 pb-20">
             <div className="container mx-auto px-6">
                <div className="mb-12 text-center">
-                  <h1 className="mb-4 text-4xl font-black uppercase tracking-tight text-white md:text-6xl">
+                  <h1 className="mb-4 font-heading text-4xl font-black uppercase tracking-tight text-white md:text-6xl">
                      JADWAL <span className="text-primary italic">BOOKING</span>
                   </h1>
                   <p className="mx-auto max-w-2xl text-lg text-zinc-400">
@@ -47,7 +56,7 @@ export default function SchedulePage() {
                </div>
 
                <div className="mx-auto max-w-4xl">
-                  {/* Date Selector Placeholder */}
+                  {/* Date Selector */}
                   <div className="mb-10 flex flex-wrap justify-center gap-3">
                      {[0, 1, 2, 3, 4, 5, 6].map((offset) => {
                         const date = new Date();
@@ -60,8 +69,8 @@ export default function SchedulePage() {
                               key={dateStr}
                               onClick={() => setSelectedDate(dateStr)}
                               className={`flex h-24 w-20 flex-col items-center justify-center rounded-2xl border-2 transition-all ${isSelected
-                                    ? "border-primary bg-primary text-white shadow-[0_0_20px_rgba(34,197,94,0.3)]"
-                                    : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-white"
+                                 ? "border-primary bg-primary text-white shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+                                 : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-white"
                                  }`}
                            >
                               <span className="text-xs font-bold uppercase tracking-widest opacity-60">
@@ -90,17 +99,15 @@ export default function SchedulePage() {
                      {timeSlots.map((slot, i) => {
                         const isBooked = slot.status === "booked";
                         return (
-                           <a
+                           <button
                               key={i}
-                              href={isBooked ? undefined : `https://api.whatsapp.com/send?phone=6281234567890&text=Halo Admin, saya ingin pesan jadwal pada tanggal ${selectedDate} jam ${slot.time}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              onClick={() => handleSlotClick(slot.time, isBooked)}
                               className={`
-                      relative flex h-20 items-center justify-center rounded-2xl border transition-all
-                      ${isBooked
+                                relative flex h-20 items-center justify-center rounded-2xl border transition-all
+                                ${isBooked
                                     ? "cursor-not-allowed border-zinc-800 bg-zinc-900/50 text-zinc-600 grayscale"
                                     : "border-zinc-800 bg-zinc-900 text-white hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"}
-                    `}
+                              `}
                            >
                               <span className="text-xl font-black tracking-tighter">{slot.time}</span>
                               {isBooked && (
@@ -108,7 +115,7 @@ export default function SchedulePage() {
                                     <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Booked</span>
                                  </div>
                               )}
-                           </a>
+                           </button>
                         );
                      })}
                   </div>
@@ -119,6 +126,13 @@ export default function SchedulePage() {
                </div>
             </div>
          </main>
+
+         <BookingModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            selectedDate={selectedDate}
+            selectedTime={selectedSlot || ""}
+         />
 
          <Footer />
       </div>

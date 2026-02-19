@@ -3,9 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --primary: #22c55e; /* Sporty Green */
+  --primary: #22c55e;
+  /* Sporty Green */
   --primary-foreground: #ffffff;
-  --secondary: #18181b; /* Dark Zinc */
+  --secondary: #18181b;
+  /* Dark Zinc */
   --secondary-foreground: #fafafa;
   --accent: #16a34a;
   --accent-foreground: #ffffff;
@@ -20,8 +22,21 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-outfit);
+  --font-brand: var(--font-syne);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,5 +49,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  overflow-x: hidden;
+}
+
+.bg-noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

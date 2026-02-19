@@ -16,19 +16,19 @@ export default function Navbar() {
 
    return (
       <nav
-         className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled
-            ? "bg-black/80 backdrop-blur-md py-4 shadow-lg"
-            : "bg-transparent py-6"
+         className={`fixed top-0 z-[60] w-full ${isScrolled
+            ? "bg-black/90 backdrop-blur-xl py-4 shadow-lg border-b border-white/5"
+            : "bg-transparent py-8"
             }`}
       >
          <div className="container mx-auto flex items-center justify-between px-6">
             <Link href="/" className="flex items-center gap-2">
-               <span className="text-2xl font-bold tracking-tighter text-white">
-                  MAB<span className="text-primary">SOCCER</span>
+               <span className="font-brand text-3xl font-black tracking-tighter text-white uppercase">
+                  MAB<span className="text-primary italic">SOCCER</span>
                </span>
             </Link>
 
-            <div className="hidden items-center gap-8 md:flex">
+            <div className="hidden items-center gap-10 md:flex">
                {[
                   { label: "Tentang", href: "/#about" },
                   { label: "Fasilitas", href: "/#facilities" },
@@ -40,14 +40,14 @@ export default function Navbar() {
                   <Link
                      key={item.label}
                      href={item.href}
-                     className="text-sm font-medium text-white/80 transition-colors hover:text-primary"
+                     className="text-xs font-black uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
                   >
                      {item.label}
                   </Link>
                ))}
                <Link
-                  href="#booking"
-                  className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+                  href="/schedule"
+                  className="flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-black uppercase tracking-widest text-white transition-colors hover:bg-accent"
                >
                   Pesan Sekarang
                </Link>
