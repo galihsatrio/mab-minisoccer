@@ -16,7 +16,7 @@ export default function Hero() {
             >
                <Image
                   src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2076&auto=format&fit=crop"
-                  alt="MAB Minisoccer Lapangan"
+                  alt="GO Minisoccer Lapangan"
                   fill
                   className="object-cover opacity-60 mix-blend-luminosity lg:opacity-70"
                   priority

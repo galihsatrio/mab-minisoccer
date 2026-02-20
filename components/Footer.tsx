@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
                <div className="flex flex-col gap-6">
                   <Link href="/" className="text-2xl font-bold tracking-tighter">
-                     MAB<span className="text-primary">SOCCER</span>
+                     GO<span className="text-primary">SOCCER</span>
                   </Link>
                   <p className="text-zinc-500">
                      Menyediakan fasilitas sepak bola terbaik untuk para pecinta olahraga. Lapangan profesional, lampu premium, dan komunitas terbaik.
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-20 border-t border-white/5 pt-10 text-center text-sm text-zinc-600">
-               &copy; {new Date().getFullYear()} MAB Minisoccer. Hak cipta dilindungi.
+               &copy; {new Date().getFullYear()} GO Minisoccer. Hak cipta dilindungi.
             </div>
          </div>
       </footer>

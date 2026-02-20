@@ -32,7 +32,7 @@ export default function BookingModal({ isOpen, onClose, selectedDate, selectedTi
    };
 
    const generateWhatsAppLink = () => {
-      const message = `Halo Admin MAB Soccer, saya ingin konfirmasi booking:
+      const message = `Halo Admin GO Soccer, saya ingin konfirmasi booking:
       
 Nama: ${name}
 No. HP: ${phone}
@@ -154,7 +154,7 @@ Bukti transfer sudah saya lampirkan di website. Mohon dicek. Terima kasih!`;
                               </div>
                               <div>
                                  <div className="text-xs font-black uppercase tracking-[0.2em] text-primary">Atas Nama</div>
-                                 <div className="text-xl font-bold text-white mt-1">MAB Minisoccer Stadium</div>
+                                 <div className="text-xl font-bold text-white mt-1">GO Minisoccer Stadium</div>
                               </div>
                            </div>
                         ) : (
@@ -167,7 +167,7 @@ Bukti transfer sudah saya lampirkan di website. Mohon dicek. Terima kasih!`;
                                     className="object-contain"
                                  />
                               </div>
-                              <div className="text-xs font-black uppercase tracking-[0.2em] text-primary leading-tight">Scan QRIS MAB Soccer</div>
+                              <div className="text-xs font-black uppercase tracking-[0.2em] text-primary leading-tight">Scan QRIS GO Soccer</div>
                            </div>
                         )}
                      </div>

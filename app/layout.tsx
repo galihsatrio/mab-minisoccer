@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "MAB Minisoccer | Lapangan Futsal Premium",
-  description: "Rasakan pengalaman mini soccer terbaik di MAB Minisoccer. Rumput premium, pencahayaan profesional, dan fasilitas terlengkap di Bandung.",
+  title: "GO Minisoccer | Lapangan Futsal Premium",
+  description: "Rasakan pengalaman mini soccer terbaik di GO Minisoccer. Rumput premium, pencahayaan profesional, dan fasilitas terlengkap di Bandung.",
 };
 
 export default function RootLayout({

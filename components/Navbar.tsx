@@ -24,7 +24,7 @@ export default function Navbar() {
          <div className="container mx-auto flex items-center justify-between px-6">
             <Link href="/" className="flex items-center gap-2">
                <span className="font-brand text-3xl font-black tracking-tighter text-white uppercase">
-                  MAB<span className="text-primary italic">SOCCER</span>
+                  GO<span className="text-primary italic">SOCCER</span>
                </span>
             </Link>
 

@@ -38,7 +38,7 @@ export default function Home() {
                   TENTANG <span className="text-primary italic">KAMI</span>
                 </h2>
                 <p className="mb-6 text-xl leading-relaxed text-zinc-600 font-medium">
-                  MAB Minisoccer berdedikasi untuk memberikan pengalaman sepak bola terbaik bagi pemain dari semua level. Fasilitas kami dilengkapi rumput sintetis premium yang memenuhi standar internasional.
+                  GO Minisoccer berdedikasi untuk memberikan pengalaman sepak bola terbaik bagi pemain dari semua level. Fasilitas kami dilengkapi rumput sintetis premium yang memenuhi standar internasional.
                 </p>
                 <p className="text-lg leading-relaxed text-zinc-500">
                   Baik untuk pertandingan seru bersama teman maupun sesi latihan profesional, lapangan kami dirancang untuk memenuhi kebutuhan Anda dengan lampu sorot bertenaga tinggi dan fasilitas terlengkap.
@@ -278,7 +278,7 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row">
                 <div className="h-[400px] w-full lg:h-[650px] lg:w-3/5 relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.4526543!2d106.7891234!3d-6.2345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e1b3b3b3b3%3A0x1b1b1b1b1b1b1b1b!2sMAB%20Minisoccer!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.4526543!2d106.7891234!3d-6.2345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e1b3b3b3b3%3A0x1b1b1b1b1b1b1b1b!2sGO%20Minisoccer!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
