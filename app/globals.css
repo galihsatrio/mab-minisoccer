@@ -22,9 +22,9 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-plus-jakarta);
-  --font-heading: var(--font-outfit);
-  --font-brand: var(--font-syne);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
+  --font-brand: var(--font-montserrat);
 }
 
 @layer base {
@@ -49,7 +49,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
